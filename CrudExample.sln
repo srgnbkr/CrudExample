@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF5DDD52-C443-4263-B05C-0426D5BCB157}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "corePackages", "corePackages", "{12BD7E8B-CA44-4646-BDE7-F4E36C50B25F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "crudExampleAPI", "crudExampleAPI", "{D0AB69FA-B098-4AD7-A65B-BD52FAB91F25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.CrossCuttingConcerns", "src\corePackages\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj", "{09895D8E-D673-48E8-BC4D-5800ACC01AAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09895D8E-D673-48E8-BC4D-5800ACC01AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09895D8E-D673-48E8-BC4D-5800ACC01AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09895D8E-D673-48E8-BC4D-5800ACC01AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09895D8E-D673-48E8-BC4D-5800ACC01AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12BD7E8B-CA44-4646-BDE7-F4E36C50B25F} = {FF5DDD52-C443-4263-B05C-0426D5BCB157}
+		{D0AB69FA-B098-4AD7-A65B-BD52FAB91F25} = {FF5DDD52-C443-4263-B05C-0426D5BCB157}
+		{09895D8E-D673-48E8-BC4D-5800ACC01AAD} = {12BD7E8B-CA44-4646-BDE7-F4E36C50B25F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49BCCA46-FD7C-481C-8A13-8D1D2D187266}
+	EndGlobalSection
+EndGlobal
