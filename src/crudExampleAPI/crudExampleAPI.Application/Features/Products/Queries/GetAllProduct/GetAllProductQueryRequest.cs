@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace crudExampleAPI.Application.Features.Products.Queries.GetAllProduct
 {
-    public class GetAllProductRequest : IRequest<GetListResponse<GetAllProductResponse>>
+    public class GetAllProductQueryRequest : IRequest<GetListResponse<GetAllProductQueryResponse>>
     {
         public PageRequest PageRequest { get; set; }
 
-        public GetAllProductRequest()
+        public GetAllProductQueryRequest()
         {
             PageRequest = new PageRequest { PageIndex = 0, PageSize = 10 };
         }
 
-        public GetAllProductRequest(PageRequest pageRequest)
+        public GetAllProductQueryRequest(PageRequest pageRequest)
         {
             PageRequest = pageRequest;
         }

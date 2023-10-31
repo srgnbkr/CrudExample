@@ -1,5 +1,6 @@
 ﻿using Core.Application.Pipelines.Transaction;
 using Core.Application.Pipelines.Validation;
+using crudExampleAPI.Application.Services.ProductsService;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,6 +22,8 @@ namespace crudExampleAPI.Application
                 configuration.AddOpenBehavior(typeof(RequestValidationBehavior<,>));
                 configuration.AddOpenBehavior(typeof(TransactionScopeBehavior<,>));
             });
+
+            services.AddScoped<IProductService,ProductManager>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
