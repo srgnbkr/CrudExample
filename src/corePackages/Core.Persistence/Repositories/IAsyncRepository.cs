@@ -33,7 +33,8 @@ namespace Core.Persistence.Repositories
 
         Task<TEntity> AddAsync(TEntity entity);
         Task<TEntity> UpdateAsync(TEntity entity);
+        Task<bool> RemoveAsync(int id);
+        bool Remove(TEntity entity);
 
-        Task<TEntity> DeleteAsync(TEntity entity, bool permanent = false);
     }
 }

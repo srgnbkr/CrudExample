@@ -1,5 +1,6 @@
 ﻿using Core.Persistence.Paging;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
 using System.Collections.Generic;
@@ -34,12 +35,7 @@ namespace Core.Persistence.Repositories
 
         
 
-        public async Task<TEntity> DeleteAsync(TEntity entity, bool permanent = false)
-        {
-            Context.Remove(Context.Entry(entity).State = EntityState.Deleted);
-            await Context.SaveChangesAsync();
-            return entity;
-        }
+       
 
         public async Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
         {
@@ -77,7 +73,16 @@ namespace Core.Persistence.Repositories
             return entity;
         }
 
-      
+        public async Task<bool> RemoveAsync(int id)
+        {
+            TEntity entity = await Context.Set<TEntity>().FindAsync(id);
+            return Remove(entity);
+        }
 
+        public bool Remove(TEntity entity)
+        {
+            EntityEntry<TEntity> entityEntry = Context.Remove(entity);
+            return entityEntry.State == EntityState.Deleted;
+        }
     }
 }
