@@ -82,7 +82,9 @@ namespace Core.Persistence.Repositories
         public bool Remove(TEntity entity)
         {
             EntityEntry<TEntity> entityEntry = Context.Remove(entity);
+            Context.SaveChanges();
             return entityEntry.State == EntityState.Deleted;
+           
         }
     }
 }
