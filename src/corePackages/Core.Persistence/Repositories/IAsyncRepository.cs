@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Core.Persistence.Repositories
 {
-    internal interface IAsyncRepository<TEntity, TEntityId> : IQuery<TEntity>
+    public interface IAsyncRepository<TEntity, TEntityId> : IQuery<TEntity>
     where TEntity : Entity<TEntityId>
     {
         Task<TEntity?> GetAsync(
