@@ -11,15 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "crudExampleAPI", "crudExamp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.CrossCuttingConcerns", "src\corePackages\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj", "{09895D8E-D673-48E8-BC4D-5800ACC01AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Application", "src\corePackages\Core.Application\Core.Application.csproj", "{A7DB1BCA-A508-4643-8085-2697D391A013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "src\corePackages\Core.Application\Core.Application.csproj", "{A7DB1BCA-A508-4643-8085-2697D391A013}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Persistence", "src\corePackages\Core.Persistence\Core.Persistence.csproj", "{B2AE5B0A-2993-492E-93BD-FB9230699CE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Persistence", "src\corePackages\Core.Persistence\Core.Persistence.csproj", "{B2AE5B0A-2993-492E-93BD-FB9230699CE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crudExampleAPI.Domain", "src\crudExampleAPI\crudExampleAPI.Domain\crudExampleAPI.Domain.csproj", "{E29E92B7-8EDC-465A-BF6A-539A9AE2A155}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "crudExampleAPI.Domain", "src\crudExampleAPI\crudExampleAPI.Domain\crudExampleAPI.Domain.csproj", "{E29E92B7-8EDC-465A-BF6A-539A9AE2A155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crudExampleAPI.Application", "src\crudExampleAPI\crudExampleAPI.Application\crudExampleAPI.Application.csproj", "{CA3FA86D-7F3E-49E8-B898-8253A228C84F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "crudExampleAPI.Application", "src\crudExampleAPI\crudExampleAPI.Application\crudExampleAPI.Application.csproj", "{CA3FA86D-7F3E-49E8-B898-8253A228C84F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crudExampleAPI.Persistence", "src\crudExampleAPI\crudExampleAPI.Persistence\crudExampleAPI.Persistence.csproj", "{A6ED012C-F8B6-4EB5-9F5F-5D01237CD0D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "crudExampleAPI.Persistence", "src\crudExampleAPI\crudExampleAPI.Persistence\crudExampleAPI.Persistence.csproj", "{A6ED012C-F8B6-4EB5-9F5F-5D01237CD0D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crudExampleAPI.WebApi", "src\crudExampleAPI\crudExampleAPI.WebApi\crudExampleAPI.WebApi.csproj", "{3C33B51E-4EF3-4E0A-89F4-5A4E208B5DEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A6ED012C-F8B6-4EB5-9F5F-5D01237CD0D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6ED012C-F8B6-4EB5-9F5F-5D01237CD0D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6ED012C-F8B6-4EB5-9F5F-5D01237CD0D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C33B51E-4EF3-4E0A-89F4-5A4E208B5DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C33B51E-4EF3-4E0A-89F4-5A4E208B5DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C33B51E-4EF3-4E0A-89F4-5A4E208B5DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C33B51E-4EF3-4E0A-89F4-5A4E208B5DEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{E29E92B7-8EDC-465A-BF6A-539A9AE2A155} = {D0AB69FA-B098-4AD7-A65B-BD52FAB91F25}
 		{CA3FA86D-7F3E-49E8-B898-8253A228C84F} = {D0AB69FA-B098-4AD7-A65B-BD52FAB91F25}
 		{A6ED012C-F8B6-4EB5-9F5F-5D01237CD0D1} = {D0AB69FA-B098-4AD7-A65B-BD52FAB91F25}
+		{3C33B51E-4EF3-4E0A-89F4-5A4E208B5DEF} = {D0AB69FA-B098-4AD7-A65B-BD52FAB91F25}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49BCCA46-FD7C-481C-8A13-8D1D2D187266}
