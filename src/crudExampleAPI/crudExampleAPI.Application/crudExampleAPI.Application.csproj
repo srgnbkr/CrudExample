@@ -20,9 +20,4 @@
     <ProjectReference Include="..\crudExampleAPI.Domain\crudExampleAPI.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Products\Commands\CreateProduct\" />
-    <Folder Include="Features\Products\Commands\UpdateProduct\" />
-  </ItemGroup>
-
 </Project>

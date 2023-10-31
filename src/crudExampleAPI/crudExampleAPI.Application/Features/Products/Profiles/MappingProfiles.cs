@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
+using crudExampleAPI.Application.Features.Products.Commands.CreateProduct;
+using crudExampleAPI.Application.Features.Products.Commands.UpdateProduct;
 using crudExampleAPI.Application.Features.Products.Queries.GetAllProduct;
 using crudExampleAPI.Application.Features.Products.Queries.GetByIdProduct;
 using crudExampleAPI.Domain.Entities;
@@ -20,6 +22,12 @@ namespace crudExampleAPI.Application.Features.Products.Profiles
             CreateMap<IPaginate<Product>,GetListResponse<GetAllProductQueryResponse>>().ReverseMap();
 
             CreateMap<Product, GetByIdProductQueryResponse>().ReverseMap();
+
+            CreateMap<Product, UpdateProductCommandResponse>().ReverseMap();
+            CreateMap<Product, UpdateProductCommandRequest>().ReverseMap();
+
+            CreateMap<Product, CreateProductCommandResponse>().ReverseMap();
+            CreateMap<Product, CreateProductCommandRequest>().ReverseMap();
         }
     }
 }
