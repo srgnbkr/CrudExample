@@ -1,5 +1,6 @@
 ﻿using Core.Application.Requests;
 using Core.Application.Responses;
+using crudExampleAPI.Application.Features.Products.Commands.DeleteProduct;
 using crudExampleAPI.Application.Features.Products.Queries.GetAllProduct;
 using crudExampleAPI.Application.Features.Products.Queries.GetByIdProduct;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +26,13 @@ namespace crudExampleAPI.WebApi.Controllers
         {
             GetByIdProductQueryResponse response = await Mediator.Send(request);
             return Ok(response);    
+        }
+
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> DeleteProduct([FromRoute] DeleteProductCommandRequest request)
+        {
+            DeleteProductCommandResponse response = await Mediator.Send(request);
+            return Ok(response);
         }
     }
 }

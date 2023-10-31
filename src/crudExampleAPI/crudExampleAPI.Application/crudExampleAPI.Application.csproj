@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Products\Commands\CreateProduct\" />
-    <Folder Include="Features\Products\Commands\DeleteProduct\" />
     <Folder Include="Features\Products\Commands\UpdateProduct\" />
   </ItemGroup>
 
