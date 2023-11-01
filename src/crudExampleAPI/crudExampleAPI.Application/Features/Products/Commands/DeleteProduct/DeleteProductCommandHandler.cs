@@ -19,7 +19,7 @@ namespace crudExampleAPI.Application.Features.Products.Commands.DeleteProduct
 
         public async Task<DeleteProductCommandResponse> Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
         {
-             await _productRepository.RemoveAsync(request.Id);
+             await _productRepository.RemoveAsync(request.ProductId);
              
              return new DeleteProductCommandResponse();
         }

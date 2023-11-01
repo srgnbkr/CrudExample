@@ -23,26 +23,11 @@ namespace crudExampleAPI.WebApi.Controllers
 
         }
 
-        [HttpGet("{Id}")]
+        [HttpGet("{ProductId}")]
         public async Task<IActionResult> GetByIdProduct([FromRoute] GetByIdProductQueryRequest request)
         {
             GetByIdProductQueryResponse response = await Mediator.Send(request);
             return Ok(response);    
-        }
-
-        [HttpDelete("{Id}")]
-        public async Task<IActionResult> DeleteProduct([FromRoute] DeleteProductCommandRequest request)
-        {
-            DeleteProductCommandResponse response = await Mediator.Send(request);
-            return Ok(response);
-        }
-
-        [HttpPut("{Id}")]
-        public async Task<IActionResult> UpdateProduct([FromRoute] int Id, [FromBody] UpdateProductCommandRequest request)
-        {
-            request.Id = Id;
-            UpdateProductCommandResponse response = await Mediator.Send(request);
-            return Ok(response);
         }
 
         [HttpPost]
@@ -51,5 +36,22 @@ namespace crudExampleAPI.WebApi.Controllers
             CreateProductCommandResponse response = await Mediator.Send(request);
             return Ok(response);
         }
+
+        [HttpDelete("{ProductId}")]
+        public async Task<IActionResult> DeleteProduct([FromRoute] DeleteProductCommandRequest request)
+        {
+            DeleteProductCommandResponse response = await Mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPut("{ProductId}")]
+        public async Task<IActionResult> UpdateProduct([FromRoute] int ProductId, [FromBody] UpdateProductCommandRequest request)
+        {
+            request.Id = ProductId;
+            UpdateProductCommandResponse response = await Mediator.Send(request);
+            return Ok(response);
+        }
+
+       
     }
 }

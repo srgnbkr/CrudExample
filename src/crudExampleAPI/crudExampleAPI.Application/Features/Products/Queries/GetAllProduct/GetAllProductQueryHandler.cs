@@ -2,7 +2,6 @@
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
-using crudExampleAPI.Application.Services.ProductsService;
 using crudExampleAPI.Application.Services.Repositories;
 using crudExampleAPI.Domain.Entities;
 using MediatR;
@@ -19,12 +18,12 @@ namespace crudExampleAPI.Application.Features.Products.Queries.GetAllProduct
     {
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
-        private readonly IProductService _productService;
+   
 
-        public GetAllProductQueryHandler(IProductRepository productRepository, IProductService productService, IMapper mapper)
+        public GetAllProductQueryHandler(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
-            _productService = productService;
+            
             _mapper = mapper;
         }
         public async Task<GetListResponse<GetAllProductQueryResponse>> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)

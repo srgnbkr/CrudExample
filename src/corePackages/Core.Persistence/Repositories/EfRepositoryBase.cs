@@ -86,5 +86,17 @@ namespace Core.Persistence.Repositories
             return entityEntry.State == EntityState.Deleted;
            
         }
+
+        public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>>? predicate = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
+        {
+            IQueryable<TEntity> queryable = Query();
+            if (!enableTracking)
+                queryable = queryable.AsNoTracking();
+            if (withDeleted)
+                queryable = queryable.IgnoreQueryFilters();
+            if (predicate != null)
+                queryable = queryable.Where(predicate);
+            return await queryable.AnyAsync(cancellationToken);
+        }
     }
 }

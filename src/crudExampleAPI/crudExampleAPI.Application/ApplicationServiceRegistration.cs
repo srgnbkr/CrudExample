@@ -1,6 +1,7 @@
 ﻿using Core.Application.Pipelines.Transaction;
 using Core.Application.Pipelines.Validation;
-using crudExampleAPI.Application.Services.ProductsService;
+using crudExampleAPI.Application.Features.Categories.Rules;
+using crudExampleAPI.Application.Features.Products.Rules;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -23,7 +24,11 @@ namespace crudExampleAPI.Application
                 configuration.AddOpenBehavior(typeof(TransactionScopeBehavior<,>));
             });
 
-            services.AddScoped<IProductService,ProductManager>();
+
+            services.AddScoped<ProductBusinessRules>();
+            services.AddScoped<CategoryBusinessRules>();
+
+            
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;

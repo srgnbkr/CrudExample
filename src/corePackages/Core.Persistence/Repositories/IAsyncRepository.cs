@@ -31,6 +31,13 @@ namespace Core.Persistence.Repositories
             CancellationToken cancellationToken = default
         );
 
+        Task<bool> AnyAsync(
+         Expression<Func<TEntity, bool>>? predicate = null,
+         bool withDeleted = false,
+         bool enableTracking = true,
+         CancellationToken cancellationToken = default);
+  
+
         Task<TEntity> AddAsync(TEntity entity);
         Task<TEntity> UpdateAsync(TEntity entity);
         Task<bool> RemoveAsync(int id);

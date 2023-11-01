@@ -23,7 +23,7 @@ namespace crudExampleAPI.Application.Features.Products.Queries.GetByIdProduct
 
         public async Task<GetByIdProductQueryResponse> Handle(GetByIdProductQueryRequest request, CancellationToken cancellationToken)
         {
-            Product? product = await _productRepository.GetAsync(predicate: p => p.Id == request.Id,cancellationToken:cancellationToken);
+            Product? product = await _productRepository.GetAsync(predicate: p => p.Id == request.ProductId,cancellationToken:cancellationToken);
             GetByIdProductQueryResponse response = _mapper.Map<GetByIdProductQueryResponse>(product);
             return response;
         }
