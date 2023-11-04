@@ -2,6 +2,7 @@
 using Core.Application.Responses;
 using Core.Persistence.Paging;
 using crudExampleAPI.Application.Features.Categories.Command.CreateCategory;
+using crudExampleAPI.Application.Features.Categories.Command.DeleteCategory;
 using crudExampleAPI.Application.Features.Categories.Command.UpdateCategory;
 using crudExampleAPI.Application.Features.Categories.Queries.GetAllCategory;
 using crudExampleAPI.Application.Features.Categories.Queries.GetByIdCategory;
@@ -29,6 +30,9 @@ namespace crudExampleAPI.Application.Features.Categories.Profiles
 
             CreateMap<Category, UpdateCategoryCommandRequest>().ReverseMap();
             CreateMap<Category, UpdateCategoryCommandResponse>().ReverseMap();
+
+            CreateMap<Category,DeleteCategoryCommandRequest>().ReverseMap();
+            CreateMap<Category,DeleteCategoryCommandRequest>().ReverseMap();
 
         }
         
