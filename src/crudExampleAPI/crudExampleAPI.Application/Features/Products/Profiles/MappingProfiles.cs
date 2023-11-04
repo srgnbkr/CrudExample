@@ -2,6 +2,7 @@
 using Core.Application.Responses;
 using Core.Persistence.Paging;
 using crudExampleAPI.Application.Features.Products.Commands.CreateProduct;
+using crudExampleAPI.Application.Features.Products.Commands.DeleteProduct;
 using crudExampleAPI.Application.Features.Products.Commands.UpdateProduct;
 using crudExampleAPI.Application.Features.Products.Queries.GetAllProduct;
 using crudExampleAPI.Application.Features.Products.Queries.GetByIdProduct;
@@ -28,6 +29,10 @@ namespace crudExampleAPI.Application.Features.Products.Profiles
 
             CreateMap<Product, CreateProductCommandResponse>().ReverseMap();
             CreateMap<Product, CreateProductCommandRequest>().ReverseMap();
+
+            CreateMap<Product, DeleteProductCommandResponse>().ReverseMap();
+            CreateMap<Product, DeleteProductCommandRequest>().ReverseMap();
+            
         }
     }
 }
