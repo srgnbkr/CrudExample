@@ -8,5 +8,6 @@ namespace crudExampleAPI.Application.Features.Categories.Command.DeleteCategory
 {
     public class DeleteCategoryCommandResponse
     {
+        
     }
 }

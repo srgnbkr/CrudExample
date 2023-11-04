@@ -17,7 +17,7 @@ namespace crudExampleAPI.Application.Features.Products.Commands.DeleteProduct
         private readonly ProductBusinessRules _productBusinessRules;
         private readonly IMapper _mapper;
 
-        public DeleteProductCommandHandler(IProductRepository productRepository, ProductBusinessRules productBusinessRules, Mapper mapper)
+        public DeleteProductCommandHandler(IProductRepository productRepository, ProductBusinessRules productBusinessRules, IMapper mapper)
         {
             _productRepository = productRepository;
             _productBusinessRules = productBusinessRules;

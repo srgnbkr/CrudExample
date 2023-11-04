@@ -32,7 +32,7 @@ namespace crudExampleAPI.Application.Features.Categories.Profiles
             CreateMap<Category, UpdateCategoryCommandResponse>().ReverseMap();
 
             CreateMap<Category,DeleteCategoryCommandRequest>().ReverseMap();
-            CreateMap<Category,DeleteCategoryCommandRequest>().ReverseMap();
+            CreateMap<Category,DeleteCategoryCommandResponse>().ReverseMap();
 
         }
         
