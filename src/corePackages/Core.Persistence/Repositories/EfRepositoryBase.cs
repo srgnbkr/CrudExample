@@ -73,19 +73,7 @@ namespace Core.Persistence.Repositories
             return entity;
         }
 
-        public async Task<bool> RemoveAsync(int id)
-        {
-            TEntity entity = await Context.Set<TEntity>().FindAsync(id);
-            return Remove(entity);
-        }
-
-        public bool Remove(TEntity entity)
-        {
-            EntityEntry<TEntity> entityEntry = Context.Remove(entity);
-            Context.SaveChanges();
-            return entityEntry.State == EntityState.Deleted;
-           
-        }
+        
 
         public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>>? predicate = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
         {
@@ -98,5 +86,13 @@ namespace Core.Persistence.Repositories
                 queryable = queryable.Where(predicate);
             return await queryable.AnyAsync(cancellationToken);
         }
+
+        public async Task<TEntity> DeleteAsync(TEntity entity)
+        {
+            Context.Entry(entity).State = EntityState.Deleted;
+            await Context.SaveChangesAsync();
+            return entity;
+        }
+        
     }
 }
