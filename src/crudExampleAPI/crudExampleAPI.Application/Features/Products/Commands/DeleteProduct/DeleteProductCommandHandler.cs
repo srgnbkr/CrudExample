@@ -15,7 +15,7 @@ namespace crudExampleAPI.Application.Features.Products.Commands.DeleteProduct
     {
         private readonly IProductRepository _productRepository;
         private readonly ProductBusinessRules _productBusinessRules;
-        private readonly Mapper _mapper;
+        private readonly IMapper _mapper;
 
         public DeleteProductCommandHandler(IProductRepository productRepository, ProductBusinessRules productBusinessRules, Mapper mapper)
         {
@@ -28,8 +28,8 @@ namespace crudExampleAPI.Application.Features.Products.Commands.DeleteProduct
         {
             Product? product = await _productRepository.GetAsync(predicate: p => p.Id == request.ProductId,cancellationToken:cancellationToken);
             
-            await _productBusinessRules.ProductShouldExistWhenSelected(product);
-            await _productRepository.DeleteAsync(product);
+            await _productBusinessRules.ProductShouldExistWhenSelected(product!);
+            await _productRepository.DeleteAsync(product!);
             DeleteProductCommandResponse response = _mapper.Map<DeleteProductCommandResponse>(product);
             return response;
              
