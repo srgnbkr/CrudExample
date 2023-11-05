@@ -41,6 +41,27 @@ namespace crudExampleAPI.Application.Features.Products.Rules
             return Task.CompletedTask;    
         }
 
+        public Task ProductListShouldExistWhenSelected(List<Product> products)
+        {
+            if (products.Count == 0)
+                throw new BusinessException("There are no products in the category.");
+            return Task.CompletedTask;
+        }
+
+        public Task ProductListShouldNotExistWhenSelected(List<Product> products)
+        {
+            if (products.Count > 0)
+                throw new BusinessException("This category cannot be deleted because it has products.");
+            return Task.CompletedTask;
+        }
+
+
+
+
+
+
+
+
 
 
     }
