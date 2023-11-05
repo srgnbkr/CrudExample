@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using crudExampleAPI.Application.Features.Products.Rules;
 using crudExampleAPI.Application.Services.Repositories;
 using crudExampleAPI.Domain.Entities;
 using MediatR;
@@ -14,11 +15,13 @@ namespace crudExampleAPI.Application.Features.Products.Commands.UpdateProduct
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
+        private readonly ProductBusinessRules _productBusinessRules;
 
-        public UpdateProductCommandHandler(IProductRepository productRepository, IMapper mapper)
+        public UpdateProductCommandHandler(IProductRepository productRepository, IMapper mapper, ProductBusinessRules productBusinessRules)
         {
             _productRepository = productRepository;
             _mapper = mapper;
+            _productBusinessRules = productBusinessRules;
         }
 
         public async Task<UpdateProductCommandResponse> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
@@ -28,6 +31,7 @@ namespace crudExampleAPI.Application.Features.Products.Commands.UpdateProduct
                 enableTracking:false, 
                 cancellationToken:cancellationToken);
 
+            await _productBusinessRules.ProductShouldExistWhenSelected(product!);
             Product mappedProduct = _mapper.Map(request, destination: product!);
 
             Product updatedProduct = await _productRepository.UpdateAsync(mappedProduct);

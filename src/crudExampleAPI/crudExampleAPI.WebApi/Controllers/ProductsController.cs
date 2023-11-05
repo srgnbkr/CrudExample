@@ -44,10 +44,10 @@ namespace crudExampleAPI.WebApi.Controllers
             return Ok(response);
         }
 
-        [HttpPut("{ProductId}")]
-        public async Task<IActionResult> UpdateProduct([FromRoute] int ProductId, [FromBody] UpdateProductCommandRequest request)
+        [HttpPut()]
+        public async Task<IActionResult> UpdateProduct([FromBody] UpdateProductCommandRequest request)
         {
-            request.Id = ProductId;
+            
             UpdateProductCommandResponse response = await Mediator.Send(request);
             return Ok(response);
         }

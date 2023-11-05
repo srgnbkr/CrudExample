@@ -48,12 +48,13 @@ namespace crudExampleAPI.WebApi.Controllers
             return Ok(response);
         }
 
-        [HttpPut("{CategoryId}")]
-        public async Task<IActionResult> UpdateCategory([FromRoute] int CategoryId, [FromBody] UpdateCategoryCommandRequest request)
+        [HttpPut()]
+        public async Task<IActionResult> UpdateCategory([FromBody] UpdateCategoryCommandRequest request)
         {
-            request.Id = CategoryId;
+            
             UpdateCategoryCommandResponse response = await Mediator.Send(request);
             return Ok(response);
+            
         }
 
         [HttpDelete("{CategoryId}")]
