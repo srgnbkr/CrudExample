@@ -93,6 +93,22 @@ namespace Core.Persistence.Repositories
             await Context.SaveChangesAsync();
             return entity;
         }
-        
+
+        public async Task<IList<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>>? predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null, int index = 0, int size = 10, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
+        {
+            IQueryable<TEntity> queryable = Query();
+            if (!enableTracking)
+                queryable = queryable.AsNoTracking();
+            if (include != null)
+                queryable = include(queryable);
+            if (withDeleted)
+                queryable = queryable.IgnoreQueryFilters();
+            if (predicate != null)
+                queryable = queryable.Where(predicate);
+            if (orderBy != null)
+                return await orderBy(queryable).ToListAsync(cancellationToken);
+            return await queryable.ToListAsync(cancellationToken);
+                
+        }
     }
 }
